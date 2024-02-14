@@ -4,3 +4,11 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+.life-point {
+    position: absolute;
+    bottom: 10%;
+    left: 13%;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
