@@ -54,6 +54,28 @@ function handleKeyboardPress(event){
     }
     else{
         console.log('you lose life');
+        // since you type a wrong key, so you get fine
+        // reduce your life line
+        let currentLife = document.getElementById('current-life');
+        let currentLifeText = currentLife.innerText;
+        let displayedLife = parseInt(currentLifeText);
+        console.log('displayed life : ', displayedLife);
+
+        // decrese life 
+        let yourNewLife = displayedLife - 1;
+        console.log(yourNewLife, 'New life');
+        currentLife.innerText = yourNewLife;
+
+        if(yourNewLife === 0){
+            // hide play Ground
+            let playGround = document.getElementById('playGround');
+            playGround.classList.add('hidden');
+
+            // show score ground 
+            let displayedScore = document.getElementById('display-score');
+            displayedScore.classList.remove('hidden');
+        }
+
     }
 }
 

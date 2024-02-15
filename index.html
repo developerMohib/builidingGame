@@ -76,13 +76,14 @@
                     <kbd id="/" class="kbd">/</kbd>
                   </div>
             </div>
+
             <!-- Life time Button -->
             
         <div class="life-point">
             <button class="btn bg-[#360490] text-white rounded-full border-none hover:bg-[#350490c0]">
                 <p>score</p>
                 <img src="./images/Group23.svg" alt="">
-                <span>1</span>
+                <span id="current-life"> 5</span>
             </button>
             
             <button class="btn bg-[#360490] text-white rounded-full border-none hover:bg-[#350490c0]">
@@ -95,7 +96,7 @@
 
         <!-- Score Page -->
 
-        <section class="score hidden">
+        <section id="display-score" class="score hidden">
             <div class="flex flex-col justify-center items-center h-screen">
                 <div class="text-center bg-[#ffffff33] p-4 rounded-lg space-y-4"> 
                     <h1 class="text-8xl text-white">
