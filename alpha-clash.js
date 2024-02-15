@@ -12,8 +12,12 @@ function playNow(){
     playGround.classList.remove('hidden');
 }
 */
+function continueGame(){
+    let alphabet = getRandomAlphabet();
+}
 
 function playNow(){
     hidelEmentById('homeScreen');
-    showlEmentById('playGround')
+    showlEmentById('playGround');
+    continueGame();
 }
