@@ -16,10 +16,10 @@ function alphabetBGColorSet(element){
     alphabetBgColor.classList.add('bg-orange-400');
 }
 
-// function alphabetBGColorRemove(element){
-//     let alphabetBgColor = document.getElementById(element);
-//     alphabetBgColor.classList.remove('bg-orange-400');
-// }
+function alphabetBGColorRemove(element){
+    let alphabetBgColor = document.getElementById(element);
+    alphabetBgColor.classList.remove('bg-orange-400');
+}
 
 
 /* ------ Keyboard Press Funtion ------ */
@@ -33,12 +33,24 @@ function handleKeyboardPress(event){
     let currentAlphabetText = currentAlphabet.innerText;
     currentAlphabetText =currentAlphabetText.toLocaleLowerCase();
 
-    console.log(currentAlphabetText , '=', playerPress );
+    // console.log(currentAlphabetText , '=', playerPress );
 
     // match or not , get point or lose life
 
     if(currentAlphabetText === playerPress){
-        console.log('you win');
+        console.log('you win & you press : ', currentAlphabetText);
+        // since you press right, so you obviously get a point , it's your right
+        let currentScore = document.getElementById('current-score');
+        let currentScoreText = currentScore.innerText;
+        let displayedScore = parseInt(currentScoreText);
+        
+        // increase score
+        let yourNewScore = displayedScore + 1;
+        currentScore.innerText = yourNewScore;
+
+        continueGame();
+        alphabetBGColorRemove(currentAlphabetText);
+
     }
     else{
         console.log('you lose life');
@@ -55,7 +67,7 @@ function getRandomAlphabet(){
     // generate array
     let myAlphabetString = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
     let myAlphabet = myAlphabetString.split(' ');
-    console.log(myAlphabet);
+    // console.log(myAlphabet);
 
     // get a random number 
     let myRandom = Math.random() * 25 ;
