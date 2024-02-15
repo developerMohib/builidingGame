@@ -38,7 +38,7 @@ function handleKeyboardPress(event){
     // match or not , get point or lose life
 
     if(currentAlphabetText === playerPress){
-        console.log('you win & you press : ', currentAlphabetText);
+        // console.log('you win & you press : ', currentAlphabetText);
         // since you press right, so you obviously get a point , it's your right
         let currentScore = document.getElementById('current-score');
         let currentScoreText = currentScore.innerText;
@@ -53,7 +53,7 @@ function handleKeyboardPress(event){
 
     }
     else{
-        console.log('you lose life');
+        // console.log('you lose life');
         // since you type a wrong key, so you get fine
         // reduce your life line
         let currentLife = document.getElementById('current-life');
@@ -63,7 +63,7 @@ function handleKeyboardPress(event){
 
         // decrese life 
         let yourNewLife = displayedLife - 1;
-        console.log(yourNewLife, 'New life');
+        // console.log(yourNewLife, 'New life');
         currentLife.innerText = yourNewLife;
 
         if(yourNewLife === 0){
@@ -77,6 +77,7 @@ function handleKeyboardPress(event){
         }
 
     }
+
 }
 
 document.addEventListener('keyup', handleKeyboardPress);
