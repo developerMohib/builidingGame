@@ -14,6 +14,17 @@ function playNow(){
 */
 function continueGame(){
     let alphabet = getRandomAlphabet();
+    console.log('Your Random Alphabet : ', alphabet);
+
+    // your random alphabet pass in display (show it)
+    
+    let myRandomAlphabetShow = document.getElementById('current-alphabet');
+    myRandomAlphabetShow.innerText = alphabet ;
+
+    // set alphabet BackGround Color
+
+    alphabetBGColorSet(alphabet)
+
 }
 
 function playNow(){
