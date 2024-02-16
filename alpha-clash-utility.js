@@ -21,6 +21,20 @@ function alphabetBGColorRemove(element){
     alphabetBgColor.classList.remove('bg-orange-400');
 }
 
+/** ----------- Score and Life -------------- */
+
+function getTextValueById(elementId){
+    let element = document.getElementById(elementId);
+    let elementText = element.innerText;
+    let value = parseInt(elementText);
+
+    return value;
+}
+
+function setTextValueById(elementId, value){
+    let element = document.getElementById(elementId);
+    element.innerText = value;
+}
 
 /* ------ Keyboard Press Funtion ------ */
 
@@ -38,8 +52,15 @@ function handleKeyboardPress(event){
     // match or not , get point or lose life
 
     if(currentAlphabetText === playerPress){
-        // console.log('you win & you press : ', currentAlphabetText);
+        console.log('you win & you press : ', currentAlphabetText);
         // since you press right, so you obviously get a point , it's your right
+
+        let currentScore = getTextValueById('current-score');
+        // console.log(currentScore , 'currentScore')
+        let yourNewScore = currentScore + 1;
+        setTextValueById(yourNewScore);
+
+        /*
         let currentScore = document.getElementById('current-score');
         let currentScoreText = currentScore.innerText;
         let displayedScore = parseInt(currentScoreText);
@@ -47,6 +68,8 @@ function handleKeyboardPress(event){
         // increase score
         let yourNewScore = displayedScore + 1;
         currentScore.innerText = yourNewScore;
+        */
+        
 
         continueGame();
         alphabetBGColorRemove(currentAlphabetText);
@@ -56,6 +79,8 @@ function handleKeyboardPress(event){
         // console.log('you lose life');
         // since you type a wrong key, so you get fine
         // reduce your life line
+
+        /*
         let currentLife = document.getElementById('current-life');
         let currentLifeText = currentLife.innerText;
         let displayedLife = parseInt(currentLifeText);
@@ -65,6 +90,7 @@ function handleKeyboardPress(event){
         let yourNewLife = displayedLife - 1;
         // console.log(yourNewLife, 'New life');
         currentLife.innerText = yourNewLife;
+        */
 
         if(yourNewLife === 0){
             // hide play Ground
