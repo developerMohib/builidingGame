@@ -14,7 +14,7 @@ function playNow(){
 */
 function continueGame(){
     let alphabet = getRandomAlphabet();
-    console.log('Your Random Alphabet : ', alphabet);
+    // console.log('Your Random Alphabet : ', alphabet);
 
     // your random alphabet pass in display (show it)
     
@@ -43,4 +43,15 @@ function playNow(){
 function gameOver(){
     hidelEmentById('playGround');
     showlEmentById('display-score');
+
+    
+    let yourFinalScore = getTextValueById('current-score');
+
+    // console.log('yourGainingScore : ', yourFinalScore );
+
+    setTextValueById('yourGainingScore', yourFinalScore);
+
+
+    let currentAlphabet = getElementTextColor('current-alphabet');
+    alphabetBGColorRemove(currentAlphabet);
 }

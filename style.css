@@ -12,3 +12,13 @@
     justify-content: space-between;
     width: 75%;
 }
+
+@media screen and (max-width: 768px) {
+    .artboard.phone-6.artboard-horizontal, .artboard.phone-6.horizontal {
+        width: 95% !important;
+        height: 250px !important;
+    }
+    .life-point {
+        bottom: 2%;
+    }
+}

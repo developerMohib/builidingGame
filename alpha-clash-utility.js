@@ -27,7 +27,7 @@ function getTextValueById(elementId){
     let element = document.getElementById(elementId);
     let elementText = element.innerText;
     let value = parseInt(elementText);
-    console.log(value , 'value ');
+    // console.log(value , 'value ');
     return value;
 }
 
@@ -36,11 +36,21 @@ function setTextValueById(elementId, value){
     element.innerText = value;
 }
 
+function getElementTextColor(elementId){
+    let element = document.getElementById(elementId);
+    let text = element.innerText ;
+    return text;
+}
 /* ------ Keyboard Press Funtion ------ */
 
 function handleKeyboardPress(event){
     let playerPress = event.key;
     console.log('Player Press : ', playerPress);
+
+    // stop the game by clicking 'Esc'
+    if(playerPress === 'Escape'){
+        gameOver();
+    }
 
     // expected alphabet 
     let currentAlphabet = document.getElementById('current-alphabet');
