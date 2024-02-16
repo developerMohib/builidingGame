@@ -30,5 +30,17 @@ function continueGame(){
 function playNow(){
     hidelEmentById('homeScreen');
     showlEmentById('playGround');
+    hidelEmentById('display-score');
+
+    // reset score and life
+    setTextValueById('current-life', 5)
+    setTextValueById('current-score', 0)
+
+
     continueGame();
+}
+
+function gameOver(){
+    hidelEmentById('playGround');
+    showlEmentById('display-score');
 }

@@ -94,6 +94,8 @@ function handleKeyboardPress(event){
         */
 
         if(yourNewLife === 0){
+            gameOver()
+            /*
             // hide play Ground
             let playGround = document.getElementById('playGround');
             playGround.classList.add('hidden');
@@ -101,6 +103,7 @@ function handleKeyboardPress(event){
             // show score ground 
             let displayedScore = document.getElementById('display-score');
             displayedScore.classList.remove('hidden');
+            */
         }
 
     }
