@@ -27,7 +27,7 @@ function getTextValueById(elementId){
     let element = document.getElementById(elementId);
     let elementText = element.innerText;
     let value = parseInt(elementText);
-
+    console.log(value , 'value ');
     return value;
 }
 
@@ -45,7 +45,8 @@ function handleKeyboardPress(event){
     // expected alphabet 
     let currentAlphabet = document.getElementById('current-alphabet');
     let currentAlphabetText = currentAlphabet.innerText;
-    currentAlphabetText =currentAlphabetText.toLocaleLowerCase();
+    currentAlphabetText = currentAlphabetText.toLocaleLowerCase();
+    console.log(currentAlphabetText, 'currentAlphabetText ')
 
     // console.log(currentAlphabetText , '=', playerPress );
 
@@ -58,19 +59,16 @@ function handleKeyboardPress(event){
         let currentScore = getTextValueById('current-score');
         // console.log(currentScore , 'currentScore')
         let yourNewScore = currentScore + 1;
-        setTextValueById(yourNewScore);
+        setTextValueById( 'current-score', yourNewScore);
 
-        /*
-        let currentScore = document.getElementById('current-score');
-        let currentScoreText = currentScore.innerText;
-        let displayedScore = parseInt(currentScoreText);
+        // let currentScore = document.getElementById('current-score');
+        // let currentScoreText = currentScore.innerText;
+        // let displayedScore = parseInt(currentScoreText);
         
-        // increase score
-        let yourNewScore = displayedScore + 1;
-        currentScore.innerText = yourNewScore;
-        */
+        // // increase score
+        // let yourNewScore = displayedScore + 1;
+        // currentScore.innerText = yourNewScore;
         
-
         continueGame();
         alphabetBGColorRemove(currentAlphabetText);
 
@@ -80,6 +78,9 @@ function handleKeyboardPress(event){
         // since you type a wrong key, so you get fine
         // reduce your life line
 
+        let currentLife = getTextValueById('current-life');
+        let yourNewLife = currentLife - 1;
+        setTextValueById('current-life', yourNewLife)
         /*
         let currentLife = document.getElementById('current-life');
         let currentLifeText = currentLife.innerText;
